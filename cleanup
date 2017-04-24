@@ -1,0 +1,3 @@
+#!/bin/bash
+# This script will be placed in /bin
+# You will NEED to run: chmod +x cleanup
