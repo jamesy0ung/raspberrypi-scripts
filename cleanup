@@ -4,8 +4,6 @@
 # All rights reserved.
 # This script will be placed in /bin
 # You will NEED to run: chmod +x cleanup
-sudo apt-get autoremove --purge
-sudo apt-get clean
 if [[ $EUID -ne 0 ]]; then
   echo "This script is intended to be run as root" 2>&1
   exit 1
