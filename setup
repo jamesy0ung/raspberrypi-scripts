@@ -7,5 +7,5 @@ if [[ $EUID -ne 0 ]]; then
   echo "This script is intended to be run as root" 2>&1
   exit 1
 else
-  apt-get purge bluej geany dillo epiphany-browser epiphany-browser-data nodered claws-mail greenfoot libreoffice* scratch squeak-plugins-scratch squeak-vm sonic-pi
+  apt-get purge bluej geany dillo epiphany-browser epiphany-browser-data nodered wolfram-engine claws-mail greenfoot libreoffice* scratch squeak-plugins-scratch squeak-vm sonic-pi
 fi
