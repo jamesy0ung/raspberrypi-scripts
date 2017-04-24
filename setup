@@ -3,3 +3,9 @@
 # Copyright (c) 2017, James Young
 # All rights reserved.
 # Before executing, run: chmod +x setup
+if [[ $EUID -ne 0 ]]; then
+  echo "This script is intended to be run as root" 2>&1
+  exit 1
+else
+  exit 0
+fi
