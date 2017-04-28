@@ -1,1 +1,5 @@
-(pv -n /dev/sda | dd of=/dev/sdb bs=128M conv=notrunc,noerror) 2>&1 | dialog --gauge "Running dd command (cloning), please wait..." 10 70 0
+#!/bin/bash
+# This software is licensed under the BSD-2-Clause license
+# Copyright (c) 2017, James Young
+# All rights reserved.
+(pv -n /dev/mmcblk0p2 | dd of=/dev/sdb bs=128M conv=notrunc,noerror) 2>&1 | dialog --gauge "Your Raspberry Pi is in the process of being backed up" 10 70 0
