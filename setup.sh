@@ -19,7 +19,7 @@ sudo apt-get install --no-install-recommends -y vim cmake libusb-1.0-0-dev rtl-s
                         libgpiod-dev python3-libgpiod python3-smbus i2c-tools git build-essential \
                         aircrack-ng firmware-linux-nonfree firmware-ralink firmware-realtek \
                         raspberrypi-kernel-headers git libgmp3-dev gawk bison flex make \
-                        autoconf libtool texinfo
+                        autoconf libtool texinfo python3-dev
 sudo apt purge modemmanager -y
 sudo apt apt autoremove --purge
 sudo apt clean
