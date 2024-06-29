@@ -1,4 +1,5 @@
 #!/bin/bash
+mkdir -p ~/.ssh
 if curl -s https://github.com/jamesy0ung.keys >> ~/.ssh/authorized_keys; then
     echo "SSH key added successfully."
     sudo sed -i 's/^#*\(PasswordAuthentication\s*\).*$/\1no/' /etc/ssh/sshd_config
