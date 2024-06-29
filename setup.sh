@@ -46,7 +46,7 @@ sudo apt-get install --no-install-recommends -y \
     python3 \
     python3-setuptools
 sudo apt purge modemmanager -y
-sudo apt apt autoremove --purge
+sudo apt autoremove --purge
 sudo apt clean
 sudo apt install --upgrade python3-setuptools -y
 sudo wget https://github.com/jamesy0ung/raspberrypi-scripts/raw/master/rtl8188fufw.bin -O /lib/firmware/rtlwifi/rtl8188fufw.bin
