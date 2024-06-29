@@ -9,6 +9,7 @@ else
     echo "Failed to add SSH key. SSH password authentication not changed."
 fi
 
+echo "dtoverlay=sdtweak,overclock_50=100" | sudo tee -a /boot/firmware/config.txt
 sudo sed -i 's/^#\(dtparam=i2c_arm=on\)/\1/' /boot/config.txt
 sudo sed -i 's/^#\(dtparam=spi=on\)/\1/' /boot/config.txt
 
