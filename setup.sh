@@ -19,6 +19,8 @@ sudo apt-get install --no-install-recommends -y vim cmake libusb-1.0-0-dev rtl-s
                         aircrack-ng firmware-linux-nonfree firmware-ralink firmware-realtek \
                         raspberrypi-kernel-headers git libgmp3-dev gawk bison flex make \
                         autoconf libtool texinfo
+sudo apt purge modemmanager -y
+sudo apt apt autoremove --purge
 sudo apt clean
 sudo apt install --upgrade python3-setuptools -y
 sudo wget https://github.com/jamesy0ung/raspberrypi-scripts/raw/master/rtl8188fufw.bin -O /lib/firmware/rtlwifi/rtl8188fufw.bin
