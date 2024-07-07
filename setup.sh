@@ -59,12 +59,13 @@ configure_raspberry_pi() {
 install_raspberry_pi_packages() {
     sudo apt update || log_error "Failed to update package lists"
     sudo apt upgrade -y || log_error "Failed to upgrade packages"
-    sudo apt-get install --no-install-recommends -y \
-        vim cmake libusb-1.0-0-dev rtl-sdr python3-pip python3-venv i2c-tools \
-        libgpiod-dev python3-libgpiod python3-smbus git build-essential aircrack-ng \
-        firmware-linux-nonfree firmware-ralink firmware-realtek \
-        raspberrypi-kernel-headers libgmp3-dev gawk bison flex make autoconf \
-        libtool texinfo python3-dev python3 python3-setuptools || log_error "Failed to install Raspberry Pi packages"
+sudo apt-get install --no-install-recommends -y \
+    vim cmake libusb-1.0-0-dev rtl-sdr python3-pip python3-venv i2c-tools \
+    libgpiod-dev python3-libgpiod python3-smbus git build-essential aircrack-ng \
+    firmware-linux-nonfree firmware-ralink firmware-realtek \
+    raspberrypi-kernel-headers libgmp3-dev gawk bison flex make autoconf \
+    libtool texinfo python3-dev python3 python3-setuptools \
+    libtool libusb-1.0-0-dev librtlsdr-dev rtl-sdr build-essential cmake pkg-config || log_error "Failed to install Raspberry Pi packages"
     sudo apt purge modemmanager -y || log_error "Failed to remove modemmanager"
     sudo apt autoremove --purge || log_error "Failed to autoremove packages"
     sudo apt clean || log_error "Failed to clean package cache"
