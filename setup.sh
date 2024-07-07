@@ -65,7 +65,8 @@ sudo apt-get install --no-install-recommends -y \
     firmware-linux-nonfree firmware-ralink firmware-realtek \
     raspberrypi-kernel-headers libgmp3-dev gawk bison flex make autoconf \
     libtool texinfo python3-dev python3 python3-setuptools \
-    libtool libusb-1.0-0-dev librtlsdr-dev rtl-sdr build-essential cmake pkg-config || log_error "Failed to install Raspberry Pi packages"
+    libtool libusb-1.0-0-dev librtlsdr-dev rtl-sdr build-essential cmake pkg-config \
+    libasound2-dev libudev-dev libavahi-client-dev python3-numpy libatlas-base-dev || log_error "Failed to install Raspberry Pi packages"
     sudo apt purge modemmanager -y || log_error "Failed to remove modemmanager"
     sudo apt autoremove --purge -y || log_error "Failed to autoremove packages"
     sudo apt clean || log_error "Failed to clean package cache"
