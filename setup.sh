@@ -67,7 +67,7 @@ sudo apt-get install --no-install-recommends -y \
     libtool texinfo python3-dev python3 python3-setuptools \
     libtool libusb-1.0-0-dev librtlsdr-dev rtl-sdr build-essential cmake pkg-config || log_error "Failed to install Raspberry Pi packages"
     sudo apt purge modemmanager -y || log_error "Failed to remove modemmanager"
-    sudo apt autoremove --purge || log_error "Failed to autoremove packages"
+    sudo apt autoremove --purge -y || log_error "Failed to autoremove packages"
     sudo apt clean || log_error "Failed to clean package cache"
     echo "Raspberry Pi OS packages installed and system cleaned."
 }
@@ -130,6 +130,7 @@ if is_raspberry_pi_os; then
     git clone https://github.com/F5OEO/rpitx || log_error "Failed to clone rpitx repository"
     python3 -m venv env --system-site-packages || log_error "Failed to create Python virtual environment"
     source env/bin/activate || log_error "Failed to activate Python virtual environment"
+    echo "export VIRTUAL_ENV_DISABLE_PROMPT=1" >> ~/.bashrc || log_error "Failed to disable virtual environment prompt disabler to .bashrc"
     echo "source ~/env/bin/activate" >> ~/.bashrc || log_error "Failed to add virtual environment activation to .bashrc"
     pip3 install --upgrade adafruit-python-shell RPi.GPIO adafruit-blinka || log_error "Failed to install Python packages"
 elif [ -f /etc/redhat-release ]; then
