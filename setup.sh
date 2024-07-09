@@ -50,6 +50,7 @@ setup_ssh() {
 # Function to configure Raspberry Pi specific settings
 configure_raspberry_pi() {
     echo "dtoverlay=sdtweak,overclock_50=100" | sudo tee -a /boot/firmware/config.txt || log_error "Failed to add SD card overclock setting"
+    echo "dtparam=i2c_vc=on" | sudo tee -a /boot/firmware/config.txt || log_error "Failed to enable second I2C interface"      
     sudo sed -i 's/^#\(dtparam=i2c_arm=on\)/\1/' /boot/firmware/config.txt || log_error "Failed to enable I2C"
     sudo sed -i 's/^#\(dtparam=spi=on\)/\1/' /boot/firmware/config.txt || log_error "Failed to enable SPI"
     echo "Raspberry Pi specific configurations applied."
