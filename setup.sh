@@ -61,13 +61,45 @@ install_raspberry_pi_packages() {
     sudo apt update || log_error "Failed to update package lists"
     sudo apt upgrade -y || log_error "Failed to upgrade packages"
 sudo apt-get install --no-install-recommends -y \
-    vim cmake libusb-1.0-0-dev rtl-sdr python3-pip python3-venv i2c-tools \
-    libgpiod-dev python3-libgpiod python3-smbus git build-essential aircrack-ng \
-    firmware-linux-nonfree firmware-ralink firmware-realtek \
-    raspberrypi-kernel-headers libgmp3-dev gawk bison flex make autoconf \
-    libtool texinfo python3-dev python3 python3-setuptools \
-    libtool libusb-1.0-0-dev librtlsdr-dev rtl-sdr build-essential cmake pkg-config \
-    libasound2-dev libudev-dev libavahi-client-dev python3-numpy libatlas-base-dev || log_error "Failed to install Raspberry Pi packages"
+    aircrack-ng \
+    autoconf \
+    bison \
+    build-essential \
+    cmake \
+    firmware-linux-nonfree \
+    firmware-ralink \
+    firmware-realtek \
+    flex \
+    gawk \
+    git \
+    i2c-tools \
+    libasound2-dev \
+    libatlas-base-dev \
+    libavahi-client-dev \
+    libi2c-dev \
+    libgmp3-dev \
+    libgpiod-dev \
+    libncurses-dev \
+    libudev-dev \
+    libusb-1.0-0-dev \
+    librtlsdr-dev \
+    libtool \
+    make \
+    pkg-config \
+    pigpio \
+    python3 \
+    python3-dev \
+    python3-libgpiod \
+    python3-numpy \
+    python3-pigpio \
+    python3-pip \
+    python3-setuptools \
+    python3-smbus \
+    python3-venv \
+    raspberrypi-kernel-headers \
+    rtl-sdr \
+    texinfo \
+    vim || log_error "Failed to install Raspberry Pi packages"
     sudo apt purge modemmanager -y || log_error "Failed to remove modemmanager"
     sudo apt autoremove --purge -y || log_error "Failed to autoremove packages"
     sudo apt clean || log_error "Failed to clean package cache"
